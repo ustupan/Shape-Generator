@@ -1,0 +1,68 @@
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Label?>
+
+<?import javafx.scene.control.TextField?>
+<BorderPane fx:controller="main.java.controller.Controller"
+            xmlns:fx="http://javafx.com/fxml"
+            prefHeight="600.0" prefWidth="600.0">
+    <top>
+        <VBox>
+            <MenuBar>
+                <Menu text="File">
+                    <MenuItem text="Zapisz" onAction="#save" />
+                    <MenuItem text="Otworz" onAction="#read"/>
+                    <MenuItem text="Wyjdz" onAction="#exit" />
+                </Menu>
+            </MenuBar>
+            <ToolBar>
+                <VBox alignment="CENTER" spacing="5">
+                    <HBox alignment="CENTER_LEFT" spacing="2">
+                        <Label text="prostokąt" prefWidth="60" prefHeight="20"/>
+                        <ColorPicker fx:id="rectangleColorPicker"/>
+                        <TextField fx:id="recX" text="X" prefWidth="70" prefHeight="20"/>
+                        <TextField fx:id="recY" text="Y" prefWidth="70" prefHeight="20"/>
+                        <TextField fx:id="recHeight" text="Wysokość" prefWidth="70" prefHeight="20"/>
+                        <TextField fx:id="recWidth" text="Szerokość" prefWidth="70" prefHeight="20"/>
+                        <Button
+                                fx:id="rectangleButton" text="Rysuj" onAction="#rectangleButton">
+                        </Button>
+                    </HBox>
+                    <HBox alignment="CENTER_LEFT" spacing="2">
+                        <Label text="koło" prefWidth="60" prefHeight="20"/>
+                        <ColorPicker fx:id="circleColorPicker"/>
+                        <TextField fx:id="circX" text="X" prefWidth="70" prefHeight="20"/>
+                        <TextField fx:id="circY" text="Y" prefWidth="70" prefHeight="20"/>
+                        <TextField fx:id="circRadius" text="Promień" prefWidth="70" prefHeight="20"/>
+                        <Button
+                                fx:id="lineButton" text="Rysuj" onAction="#circleButton">
+                        </Button>
+                    </HBox>
+                    <HBox alignment="CENTER_LEFT" spacing="2">
+                        <Label text="linia" prefWidth="60" prefHeight="20"/>
+                        <ColorPicker fx:id="lineColorPicker"/>
+                        <TextField fx:id="lineX1" text="X1" prefWidth="70" prefHeight="20"/>
+                        <TextField fx:id="lineY1" text="Y1" prefWidth="70" prefHeight="20"/>
+                        <TextField fx:id="lineX2" text="X2" prefWidth="70" prefHeight="20"/>
+                        <TextField fx:id="lineY2" text="Y2" prefWidth="70" prefHeight="20"/>
+                        <Button
+                                fx:id="circleButton" text="Rysuj" onAction="#lineButton">
+                        </Button>
+                    </HBox>
+                </VBox>
+            </ToolBar>
+        </VBox>
+    </top>
+    <center>
+        <Canvas fx:id="canvas" width="400" height="400" />
+    </center>
+
+</BorderPane>
